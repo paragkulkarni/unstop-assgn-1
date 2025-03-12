@@ -1,0 +1,31 @@
+<div class="modal-header flex">
+  <h4 class="modal-title float-start" id="modal-basic-title">Form</h4>
+  <div class="mx-auto w-100">
+    <button type="button" class="btn float-end close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span class="h2" aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+</div>
+<div class="modal-body">
+  <form class="form" [formGroup]="form" (submit)="submit()">
+    <div class="mb-3">
+      <label for="namefor" class="form-label">Name</label>
+      <input class="form-control" formControlName="name" type="text" id="namefor" />
+    </div>
+    <div class="mb-3">
+      <label for="emailfor" class="form-label">Email</label>
+      <input class="form-control" formControlName="email" type="email" id="emailfor">
+    </div>
+    <div class="mb-3">
+      <select formControlName="role" class="form-select" aria-label="Default select example">
+        <option disabled value="">Open this select menu</option>
+        <option [value]="'admin'">Admin</option>
+        <option [value]="'editor'">Editor</option>
+        <option [value]="'viewer'">Viewer</option>
+      </select>
+    </div>
+    <button class="btn btn-primary float-end mb-3" type="submit">Submit</button>
+  </form>
+</div>
+
